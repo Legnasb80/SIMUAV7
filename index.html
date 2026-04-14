@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,11 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Header / Logo Section -->
@@ -38,7 +42,7 @@
 
         <!-- Results Area -->
         <main class="results-area" id="results-area">
-            
+
             <!-- Dashboard Summary -->
             <section class="result-block glass-card" id="dashboard">
                 <h3 class="block-title">RESUMEN OPERATIVO</h3>
@@ -63,11 +67,31 @@
                     <h3 class="block-title">SISTEMA 51: HIDROGENACIÓN</h3>
                 </div>
                 <div class="data-list">
-                    <div class="row"><span class="label">FC100 (ST)</span><span class="value" id="val-FC100">---</span><span class="unit">m³/h</span></div>
-                    <div class="row"><span class="label">FC102 (H2)</span><span class="value" id="val-H2">---</span><span class="unit">Nm³/h</span></div>
-                    <div class="row"><span class="label">FC110 (Recirc.)</span><span class="value" id="val-FC_110">---</span><span class="unit">m³/h</span></div>
-                    <div class="row"><span class="label">FC116 (H2O Enfri.)</span><span class="value" id="val-FC_116">---</span><span class="unit">m³/h</span></div>
-                    <div class="row"><span class="label">FC117 (H2O Enfri.)</span><span class="value" id="val-FC_117">---</span><span class="unit">m³/h</span></div>
+                    <div class="row"><span class="label">FC100 (ST)</span><span class="value"
+                            id="val-FC100">---</span><span class="unit">m³/h</span></div>
+                    <div class="row"><span class="label">FC102 (H2)</span><span class="value"
+                            id="val-H2">---</span><span class="unit">Nm³/h</span></div>
+                </div>
+                <button class="btn-detail" onclick="toggleDetail('detail-s51')">DETALLES TÉCNICOS</button>
+                <div id="detail-s51" class="detail-container">
+                    <div class="detail-content">
+                        <img src="Reactor.png" alt="Diagrama Reactor" class="full-diagram">
+                        <h4>SET POINTS REFERENCIA</h4>
+                        <div class="sp-table">
+                            <div class="sp-row"><span>TC_101 (Temp.)</span><span>50 – 51 °C</span></div>
+                            <div class="sp-row"><span>PC_103 (Pres.)</span><span>3.1 – 3.4 bar</span></div>
+                            <div class="sp-row"><span>LC_101 (Nivel)</span><span>43 – 45 %</span></div>
+                        </div>
+                        <h4>BALANCES / ENFRIAMIENTO</h4>
+                        <div class="data-list mini">
+                            <div class="row"><span class="label">FC110 (Rec.)</span><span class="value"
+                                    id="val-FC_110-d">---</span><span class="unit">m³/h</span></div>
+                            <div class="row"><span class="label">FC116 (H2O)</span><span class="value"
+                                    id="val-FC_116-d">---</span><span class="unit">m³/h</span></div>
+                            <div class="row"><span class="label">FC117 (H2O)</span><span class="value"
+                                    id="val-FC_117-d">---</span><span class="unit">m³/h</span></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -78,10 +102,29 @@
                     <h3 class="block-title">SISTEMA 52: OXIDACIÓN I</h3>
                 </div>
                 <div class="data-list">
-                    <div class="row"><span class="label">FC220 (STH)</span><span class="value" id="val-FC220">---</span><span class="unit">m³/h</span></div>
-                    <div class="row"><span class="label">FC202 (AIRE)</span><span class="value" id="val-AIRE1">---</span><span class="unit">Nm³/h</span></div>
-                    <div class="row"><span class="label">FC208 (H2O Enfri.)</span><span class="value" id="val-FC_208">---</span><span class="unit">m³/h</span></div>
-                    <div class="row"><span class="label">FC211 (H2O Enfri.)</span><span class="value" id="val-FC_211">---</span><span class="unit">m³/h</span></div>
+                    <div class="row"><span class="label">FC220 (STH)</span><span class="value"
+                            id="val-FC220">---</span><span class="unit">m³/h</span></div>
+                    <div class="row"><span class="label">FC202 (AIRE)</span><span class="value"
+                            id="val-AIRE1">---</span><span class="unit">Nm³/h</span></div>
+                </div>
+                <button class="btn-detail" onclick="toggleDetail('detail-s52-1')">DETALLES TÉCNICOS</button>
+                <div id="detail-s52-1" class="detail-container">
+                    <div class="detail-content">
+                        <img src="Oxigenador1.png" alt="Diagrama Oxigenador 1" class="full-diagram">
+                        <h4>SET POINTS REFERENCIA</h4>
+                        <div class="sp-table">
+                            <div class="sp-row"><span>TC_225 (Temp.)</span><span>53 – 54 °C</span></div>
+                            <div class="sp-row"><span>PC_223 (Pres.)</span><span>2.3 – 2.5 bar</span></div>
+                            <div class="sp-row"><span>LC_221 (Nivel)</span><span>25 – 28 %</span></div>
+                        </div>
+                        <h4>BALANCES / ENFRIAMIENTO</h4>
+                        <div class="data-list mini">
+                            <div class="row"><span class="label">FC208 (H2O)</span><span class="value"
+                                    id="val-FC_208-d">---</span><span class="unit">m³/h</span></div>
+                            <div class="row"><span class="label">FC211 (H2O)</span><span class="value"
+                                    id="val-FC_211-d">---</span><span class="unit">m³/h</span></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -92,41 +135,51 @@
                     <h3 class="block-title">SISTEMA 52: OXIDACIÓN II</h3>
                 </div>
                 <div class="data-list">
-                    <div class="row"><span class="label">FC200 (STO)</span><span class="value" id="val-FC200">---</span><span class="unit">m³/h</span></div>
-                    <div class="row"><span class="label">FC203 (AIRE)</span><span class="value" id="val-AIRE2">---</span><span class="unit">Nm³/h</span></div>
-                    <div class="row"><span class="label">FC213 (H2O Enfri.)</span><span class="value" id="val-FC_213">---</span><span class="unit">m³/h</span></div>
+                    <div class="row"><span class="label">FC200 (STO)</span><span class="value"
+                            id="val-FC200">---</span><span class="unit">m³/h</span></div>
+                    <div class="row"><span class="label">FC203 (AIRE)</span><span class="value"
+                            id="val-AIRE2">---</span><span class="unit">Nm³/h</span></div>
+                </div>
+                <button class="btn-detail" onclick="toggleDetail('detail-s52-2')">DETALLES TÉCNICOS</button>
+                <div id="detail-s52-2" class="detail-container">
+                    <div class="detail-content">
+                        <img src="Imagen5.png" alt="Diagrama Oxigenador 2" class="full-diagram">
+                        <h4>SET POINTS REFERENCIA</h4>
+                        <div class="sp-table">
+                            <div class="sp-row"><span>TC_205 (Temp.)</span><span>49 – 50 °C</span></div>
+                            <div class="sp-row"><span>PC_210 (Pres.)</span><span>2 – 2.2 bar</span></div>
+                            <div class="sp-row"><span>LC_201 (Nivel)</span><span>20 – 23 %</span></div>
+                        </div>
+                        <h4>BALANCES / ENFRIAMIENTO</h4>
+                        <div class="data-list mini">
+                            <div class="row"><span class="label">FC213 (H2O)</span><span class="value"
+                                    id="val-FC_213-d">---</span><span class="unit">m³/h</span></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Setpoints Section -->
-            <section class="result-block glass-card" id="setpoints">
-                <h3 class="block-title">SETPOINTS OPERATIVOS (REF)</h3>
-                
-                <div class="setpoints-container">
-                    <div class="sp-group">
-                        <h4>Sistema 51 (Reactor)</h4>
+            <!-- Sistema 53 -->
+            <section class="result-block glass-card" id="s53">
+                <div class="block-header">
+                    <img src="FC300.png" alt="Extractor" class="thumb">
+                    <h3 class="block-title">SISTEMA 53: EXTRACCIÓN</h3>
+                </div>
+                <div class="data-list">
+                    <div class="row"><span class="label">FC302 (H2O Proceso)</span><span class="value"
+                            id="val-agua_extractor">---</span><span class="unit">m³/h</span></div>
+                    <div class="row"><span class="label">Aire Total</span><span class="value"
+                            id="val-aire_total">---</span><span class="unit">Nm³/h</span></div>
+                </div>
+                <button class="btn-detail" onclick="toggleDetail('detail-s53')">DETALLES TÉCNICOS</button>
+                <div id="detail-s53" class="detail-container">
+                    <div class="detail-content">
+                        <img src="FC300.png" alt="Diagrama Extractor" class="full-diagram">
+                        <h4>SET POINTS REFERENCIA</h4>
                         <div class="sp-table">
-                            <div class="sp-row"><span>TC_101</span><span>50 – 51 °C</span></div>
-                            <div class="sp-row"><span>PC_103</span><span>3.1 – 3.4 bar</span></div>
-                            <div class="sp-row"><span>LC_101</span><span>43 – 45 %</span></div>
-                        </div>
-                    </div>
-
-                    <div class="sp-group">
-                        <h4>Sistema 52 (Oxidación I)</h4>
-                        <div class="sp-table">
-                            <div class="sp-row"><span>TC_225</span><span>53 – 54 °C</span></div>
-                            <div class="sp-row"><span>PC_223</span><span>2.3 – 2.5 bar</span></div>
-                            <div class="sp-row"><span>LC_221</span><span>25 – 28 %</span></div>
-                        </div>
-                    </div>
-
-                    <div class="sp-group">
-                        <h4>Sistema 52 (Oxidación II)</h4>
-                        <div class="sp-table">
-                            <div class="sp-row"><span>TC_205</span><span>49 – 50 °C</span></div>
-                            <div class="sp-row"><span>PC_210</span><span>2 – 2.2 bar</span></div>
-                            <div class="sp-row"><span>LC_201</span><span>20 – 23 %</span></div>
+                            <div class="sp-row"><span>TC_305 (Temp.)</span><span>49 – 50 °C</span></div>
+                            <div class="sp-row"><span>LC_301 (Nivel)</span><span>42 – 45 %</span></div>
+                            <div class="sp-row"><span>LC_309 (Nivel)</span><span>48 – 51 %</span></div>
                         </div>
                     </div>
                 </div>
@@ -140,4 +193,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
