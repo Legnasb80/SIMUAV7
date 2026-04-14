@@ -1,3 +1,12 @@
+// --- Inicialización (Splash Screen) ---
+window.addEventListener('DOMContentLoaded', () => {
+    // Simulamos un tiempo de carga para mostrar el logo (2.5 segundos)
+    setTimeout(() => {
+        const splash = document.getElementById('splash-screen');
+        splash.classList.add('fade-out');
+    }, 2500);
+});
+
 // --- Constantes y Modelo Físico ---
 const DENSIDADES = {
     10.5: { FC100: 940.00, FC220: 937.43, FC200: 936.97, FC300: 934.78 },
