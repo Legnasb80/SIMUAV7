@@ -134,7 +134,10 @@ function calcular(prod_diaria_t, grados_hidrogenacion) {
         ST_FC300, FC100: FC100_m3h, H2: H2_Nm3h, FC220: FC220_m3h, 
         AIRE1: F_AIRE1, FC200: FC200_m3h, AIRE2: F_AIRE2,
         agua_extractor, perox_crudo, aire_total,
-        FC_110, FC_116, FC_117, FC_208, FC_211, FC_213
+        FC_110, mFC_110, QFC_110, mFC_116, FC_116, 
+        QFC_220, mFC_117, FC_117, 
+        QFC_220A, mFC_208, FC_208, 
+        FC_211, FC_213
     };
 }
 
@@ -182,7 +185,10 @@ function updateUI(res) {
     const fields = [
         "ST_FC300", "FC100", "H2", "FC220", "AIRE1", "FC200", "AIRE2",
         "agua_extractor", "perox_crudo", "aire_total",
-        "FC_110", "FC_116", "FC_117", "FC_208", "FC_211", "FC_213"
+        "FC_110", "mFC_110", "QFC_110", "mFC_116", "FC_116", 
+        "QFC_220", "mFC_117", "FC_117", 
+        "QFC_220A", "mFC_208", "FC_208", 
+        "FC_211", "FC_213"
     ];
 
     fields.forEach(f => {
@@ -194,6 +200,8 @@ function updateUI(res) {
             if (res !== null) {
                 let decimals = 1;
                 if (f === "perox_crudo") decimals = 0;
+                // Para calores o masas grandes, podemos usar 0 decimales si quieres
+                if (f.startsWith('QFC') || f.startsWith('mFC')) decimals = 0;
                 valStr = fmt(res[f], decimals);
             }
             
