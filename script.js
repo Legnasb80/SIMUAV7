@@ -130,6 +130,20 @@ function calcular(prod_diaria_t, grados_hidrogenacion) {
 }
 
 // --- Manejo de UI ---
+function toggleDetail(id) {
+    const el = document.getElementById(id);
+    const isOpen = el.classList.contains('open');
+    
+    // Cerrar otros si estuvieran abiertos (opcional, pero mejora el scroll largo)
+    // document.querySelectorAll('.detail-container').forEach(c => c.classList.remove('open'));
+
+    if (!isOpen) {
+        el.classList.add('open');
+    } else {
+        el.classList.remove('open');
+    }
+}
+
 document.getElementById('btn-calcular').addEventListener('click', () => {
     const prod = parseFloat(document.getElementById('prod_diaria').value);
     const grados = parseFloat(document.getElementById('grados').value);
@@ -164,15 +178,18 @@ function updateUI(res) {
 
     fields.forEach(f => {
         const el = document.getElementById(`val-${f}`);
-        if (el) {
-            if (res === null) {
-                el.textContent = "0,0";
-            } else {
-                // Formatting specific to unit
+        const elDetail = document.getElementById(`val-${f}-d`); // Campos en el detalle desplegable
+
+        if (el || elDetail) {
+            let valStr = "0,0";
+            if (res !== null) {
                 let decimals = 1;
                 if (f === "perox_crudo") decimals = 0;
-                el.textContent = fmt(res[f], decimals);
+                valStr = fmt(res[f], decimals);
             }
+            
+            if (el) el.textContent = valStr;
+            if (elDetail) elDetail.textContent = valStr;
         }
     });
 
